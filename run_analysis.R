@@ -5,47 +5,34 @@ library(tidyverse)
 library(data.table)
 library(dplyr)
 
-
 ################################################################################################
 ## Loading Data Sets
 ################################################################################################
 
 # label Info for both sets
-lbl_feat <- read_table2("./data/projdata/features.txt", col_names = FALSE)
-lbl_act <- read_table("./data/projdata/activity_labels.txt", col_names = FALSE)
+# commenting out instances where data used to reside
+# lbl_feat <- read_table2("./data/projdata/features.txt", col_names = FALSE)
+# lbl_act <- read_table("./data/projdata/activity_labels.txt", col_names = FALSE)
+lbl_feat <- read_table2("features.txt", col_names = FALSE)
+lbl_act <- read_table("activity_labels.txt", col_names = FALSE)
 
 # training sets
-tr_lbl <- read_table(file = "./data/projdata/train/Y_train.txt", col_names = FALSE)
-tr_sub <- read_table(file = "./data/projdata/train/subject_train.txt", col_names = FALSE)
-tr_set <- read_table(file = "./data/projdata/train/X_train.txt", col_names = FALSE)
+# commenting out instances where data used to reside
+# tr_lbl <- read_table(file = "./data/projdata/train/Y_train.txt", col_names = FALSE)
+# tr_sub <- read_table(file = "./data/projdata/train/subject_train.txt", col_names = FALSE)
+# tr_set <- read_table(file = "./data/projdata/train/X_train.txt", col_names = FALSE)
+tr_lbl <- read_table(file = "Y_train.txt", col_names = FALSE)
+tr_sub <- read_table(file = "subject_train.txt", col_names = FALSE)
+tr_set <- read_table(file = "X_train.txt", col_names = FALSE)
 
 # test sets
-ts_lbl <- read_table(file = "./data/projdata/test/Y_test.txt", col_names = FALSE)
-ts_sub <- read_table(file = "./data/projdata/test/subject_test.txt", col_names = FALSE)
-ts_set <- read_table(file = "./data/projdata/test/X_test.txt", col_names = FALSE)
-
-################################################################################################
-## Loading Inertial Signals Data sets (doing nothing now)
-################################################################################################
-tr_set_is_bodyacc_x <- read_table(file = "./data/projdata/train/Inertial Signals/body_acc_x_train.txt", col_names = FALSE)
-tr_set_is_bodyacc_y <- read_table(file = "./data/projdata/train/Inertial Signals/body_acc_y_train.txt", col_names = FALSE)
-tr_set_is_bodyacc_z <- read_table(file = "./data/projdata/train/Inertial Signals/body_acc_z_train.txt", col_names = FALSE)
-tr_set_is_bodygyro_x <- read_table(file = "./data/projdata/train/Inertial Signals/body_gyro_x_train.txt", col_names = FALSE)
-tr_set_is_bodygyro_y <- read_table(file = "./data/projdata/train/Inertial Signals/body_gyro_y_train.txt", col_names = FALSE)
-tr_set_is_bodygyro_z <- read_table(file = "./data/projdata/train/Inertial Signals/body_gyro_z_train.txt", col_names = FALSE)
-tr_set_is_totalacc_x <- read_table(file = "./data/projdata/train/Inertial Signals/total_acc_x_train.txt", col_names = FALSE)
-tr_set_is_totalacc_y <- read_table(file = "./data/projdata/train/Inertial Signals/total_acc_y_train.txt", col_names = FALSE)
-tr_set_is_totalacc_z <- read_table(file = "./data/projdata/train/Inertial Signals/total_acc_z_train.txt", col_names = FALSE)
-
-ts_set_is_bodyacc_x <- read_table(file = "./data/projdata/test/Inertial Signals/body_acc_x_test.txt", col_names = FALSE)
-ts_set_is_bodyacc_y <- read_table(file = "./data/projdata/test/Inertial Signals/body_acc_y_test.txt", col_names = FALSE)
-ts_set_is_bodyacc_z <- read_table(file = "./data/projdata/test/Inertial Signals/body_acc_z_test.txt", col_names = FALSE)
-ts_set_is_bodygyro_x <- read_table(file = "./data/projdata/test/Inertial Signals/body_gyro_x_test.txt", col_names = FALSE)
-ts_set_is_bodygyro_y <- read_table(file = "./data/projdata/test/Inertial Signals/body_gyro_y_test.txt", col_names = FALSE)
-ts_set_is_bodygyro_z <- read_table(file = "./data/projdata/test/Inertial Signals/body_gyro_z_test.txt", col_names = FALSE)
-ts_set_is_totalacc_x <- read_table(file = "./data/projdata/test/Inertial Signals/total_acc_x_test.txt", col_names = FALSE)
-ts_set_is_totalacc_y <- read_table(file = "./data/projdata/test/Inertial Signals/total_acc_y_test.txt", col_names = FALSE)
-ts_set_is_totalacc_z <- read_table(file = "./data/projdata/test/Inertial Signals/total_acc_z_test.txt", col_names = FALSE)
+# commenting out instances where data used to reside
+# ts_lbl <- read_table(file = "./data/projdata/test/Y_test.txt", col_names = FALSE)
+# ts_sub <- read_table(file = "./data/projdata/test/subject_test.txt", col_names = FALSE)
+# ts_set <- read_table(file = "./data/projdata/test/X_test.txt", col_names = FALSE)
+ts_lbl <- read_table(file = "Y_test.txt", col_names = FALSE)
+ts_sub <- read_table(file = "subject_test.txt", col_names = FALSE)
+ts_set <- read_table(file = "X_test.txt", col_names = FALSE)
 
 ################################################################################################
 ## Perform some minor cleanup to the data
